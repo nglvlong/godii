@@ -6,6 +6,7 @@ import com.fpt.godii.application.exception.FOSystemErrorException;
 import io.minio.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.stereotype.Component;
 import org.springframework.web.multipart.MultipartFile;
 import org.apache.tika.Tika;
@@ -15,6 +16,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Component
+@ConditionalOnProperty(name = "file-server.min-io.minio-enabled", havingValue = "true")
 public class MinIOUtil {
     private final MinioClient minioClient;
     private final List<String> bucketNames = new ArrayList<>();
