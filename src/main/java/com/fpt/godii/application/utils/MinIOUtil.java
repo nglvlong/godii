@@ -16,7 +16,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Component
-@ConditionalOnProperty(name = "file-server.min-io.minio-enabled", havingValue = "true")
 public class MinIOUtil {
     private final MinioClient minioClient;
     private final List<String> bucketNames = new ArrayList<>();

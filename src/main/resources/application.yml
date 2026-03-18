@@ -11,10 +11,9 @@ server:
 
 file-server:
   min-io:
-    endpoint: ${MINIO_ENDPOINT}
-    access-key: ${MINIO_ACCESS_KEY}
-    secret-key: ${MINIO_SECRET_KEY}
-    minio-enabled: false
+    endpoint: ${MINIO_ENDPOINT:http://localhost:9000}
+    accessKey: ${MINIO_ACCESS_KEY:minioadmin}
+    secretKey: ${MINIO_SECRET_KEY:minioadmin}
 
 spring:
   datasource:
